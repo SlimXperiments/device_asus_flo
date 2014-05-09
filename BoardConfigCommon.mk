@@ -105,8 +105,38 @@ TARGET_USES_POST_PROCESSING := true
 TARGET_CUSTOM_DISPLAY_TUNING := true
 
 USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY := true
-OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+#OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 USE_DEVICE_SPECIFIC_CAMERA:= true
 
 HAVE_ADRENO_SOURCE:= false
+
+BOARD_SEPOLICY_DIRS += device/asus/flo/sepolicy
+
+# The list below is order dependent
+BOARD_SEPOLICY_UNION += \
+        bluetooth_loader.te \
+        bridge.te \
+        camera.te \
+        conn_init.te \
+        device.te \
+        domain.te \
+        file.te \
+        file_contexts \
+        hostapd.te \
+        irsc_util.te \
+        kickstart.te \
+        mediaserver.te \
+        mpdecision.te \
+        netmgrd.te \
+        ppd.te \
+        qmux.te \
+        rild.te \
+        rmt.te \
+        sensors.te \
+        surfaceflinger.te \
+        system_server.te \
+        tee.te \
+        te_macros \
+        thermald.te \
+        ueventd.te
